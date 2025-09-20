@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base = "http://localhost:8000/api/neonNexa.users";
+const base = "https://neonnexon-backend.onrender.com/api/neonNexa.users";
 
 const instance = axios.create({
     baseURL: base,
