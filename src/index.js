@@ -1,0 +1,35 @@
+import Home from "./pages/Home";
+import Button from "./components/Button";
+import FeaturesCard from "./components/FeaturesCard";
+import Nav from "./components/navbar/Nav";
+import Footer from "./components/footer/Footer";
+import Welcome from "./components/Welcome";
+import GlobalLoader from "./components/loader/GlobalLoader";
+import axios from "./utils/axios/axios.server.js"
+
+//pages
+import Dashboard from "./pages/Dashboard";
+import Game from "./pages/Game";
+import Quiz from "./pages/Quiz";
+import Awareness from "./pages/Awareness";
+import Register from "./pages/register";
+import Login from "./pages/login";
+import BackToBtn from "./components/BackToBtn";
+
+export {
+    Home,
+    Button,
+    FeaturesCard,
+    Nav,
+    Awareness,
+    Dashboard,
+    Game,
+    Quiz,
+    Footer, 
+    Welcome,
+    GlobalLoader,
+    Register,
+    BackToBtn,
+    Login,
+    axios
+}
