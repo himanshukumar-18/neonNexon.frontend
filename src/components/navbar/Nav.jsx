@@ -90,17 +90,40 @@ const Navbar = () => {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden text-gray-200 text-2xl focus:outline-none"
-                        onClick={() => setMenuOpen(!menuOpen)}
-                    >
-                        {menuOpen ? "✕" : "☰"}
-                    </button>
+  className="relative z-50 flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg md:hidden group"
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  <span
+    className={`block h-0.5 w-6 rounded-sm bg-white transform transition duration-300 ease-in-out 
+      ${menuOpen ? "rotate-45 translate-y-1.5" : "-translate-y-1.5"}`}
+  />
+  <span
+    className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-in-out 
+      ${menuOpen ? "opacity-0" : "opacity-100"}`}
+  />
+  <span
+    className={`block h-0.5 w-6 rounded-sm bg-white transform transition duration-300 ease-in-out 
+      ${menuOpen ? "-rotate-45 -translate-y-1.5" : "translate-y-1.5"}`}
+  />
+</button>
                 </div>
 
                 {/* Mobile Dropdown */}
                 {menuOpen && (
                     <div className="md:hidden px-6 pb-4 backdrop-blur-lg bg-black/30 border-t border-white/20">
-                        <ul className="space-y-3 font-medium text-gray-200">
+                        
+                        {
+                            user ? (
+                                <div className="flex items-center justify-between py-3 border-b border-white/20">
+                                    <span className="text-gray-200">Hello 👋, {user.name}</span>
+                                </div>
+                            ) : (
+                                <div className="flex items-center justify-between py-3 border-b border-white/20">
+                                    <span className="text-gray-200">Hello 👋, Guest</span>
+                                </div>
+                            )}
+
+                        <ul className="space-y-3 py-3 font-medium text-gray-200">
                             {[
                                 { name: "Home", path: "/" },
                                 { name: "Dashboard", path: "/dashboard" },
