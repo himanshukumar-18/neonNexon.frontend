@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 export default function Game() {
   const [quizResult, setQuizResult] = useState(null)
@@ -9,13 +10,13 @@ export default function Game() {
   }
 
   return (
-    <div className="min-h-screen py-50 bg-gradient-to-br from-[#0f172a] to-[#1e1b4b] text-white p-8">
+    <div className="min-h-screen py-50 bg-gradient-to-br from-[#0f172a] to-[#1e1b4b] text-white p-8 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-center text-purple-400 mb-12">
         🎮 Fun Learning Games
       </h1>
 
       {/* Card Grid */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
 
         {/* Flashcards */}
         <motion.div whileHover={{ scale: 1.05 }}>
@@ -26,9 +27,11 @@ export default function Game() {
             <p className="flex-grow">
               Memorize STEM terms using fun flashcards. Flip and learn with ease!
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-purple-500 hover:bg-purple-600 transition w-full">
-              Start Flashcards
-            </button>
+            <Link to="/game/flashcards">
+              <button className="mt-6 px-4 py-2 rounded-xl bg-purple-500 hover:bg-purple-600 transition w-full">
+                Start Flashcards
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -41,9 +44,11 @@ export default function Game() {
             <p className="flex-grow">
               Drag & drop periodic elements into correct order. Challenge your logic!
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-pink-500 hover:bg-pink-600 transition w-full">
-              Play Puzzle
-            </button>
+            <Link to="/game/puzzle">
+              <button className="mt-6 px-4 py-2 rounded-xl bg-pink-500 hover:bg-pink-600 transition w-full">
+                Start Puzzle
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -56,9 +61,11 @@ export default function Game() {
             <p className="flex-grow">
               Solve fast-paced math problems to boost your calculation speed.
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-yellow-500 hover:bg-yellow-600 transition w-full">
-              Start Math Game
-            </button>
+            <Link to="/game/math">
+              <button className="mt-6 px-4 py-2 rounded-xl bg-yellow-500 hover:bg-yellow-600 transition w-full">
+                Start Math Game
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -71,9 +78,11 @@ export default function Game() {
             <p className="flex-grow">
               Rearrange letters to form science-related words.
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-blue-500 hover:bg-blue-600 transition w-full">
-              Play Word Builder
-            </button>
+            <Link to={"/game/wordbuilder"}>
+              <button className="mt-6 px-4 py-2 rounded-xl bg-blue-500 hover:bg-blue-600 transition w-full">
+                Play Word Builder
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -86,9 +95,11 @@ export default function Game() {
             <p className="flex-grow">
               Arrange scrambled code blocks to make a working program.
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-green-500 hover:bg-green-600 transition w-full">
-              Play Coding Puzzle
-            </button>
+            <Link to={"/game/coding"}>
+              <button className="mt-6 px-4 py-2 rounded-xl bg-green-500 hover:bg-green-600 transition w-full">
+                Play Coding Puzzle
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -101,9 +112,11 @@ export default function Game() {
             <p className="flex-grow">
               Match pairs of STEM symbols and boost your memory skills.
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-pink-500 hover:bg-pink-600 transition w-full">
-              Start Memory Match
-            </button>
+            <Link to={"/game/memorymatch"}>
+              <button className="mt-6 px-4 py-2 rounded-xl bg-pink-500 hover:bg-pink-600 transition w-full">
+                Start Memory Match
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -116,9 +129,11 @@ export default function Game() {
             <p className="flex-grow">
               Explore fun science facts with interactive mini-games.
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-red-500 hover:bg-red-600 transition w-full">
-              Explore Science
-            </button>
+            <Link to={"/game/scienceexplorer"}>
+              <button className="mt-6 px-4 py-2 rounded-xl bg-red-500 hover:bg-red-600 transition w-full">
+                Explore Science
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -131,9 +146,11 @@ export default function Game() {
             <p className="flex-grow">
               Find hidden STEM words in a grid and sharpen your vocabulary.
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-purple-500 hover:bg-purple-600 transition w-full">
-              Start Word Search
-            </button>
+            <Link to={"/game/wordsearch"}>
+              <button className="mt-6 px-4 py-2 rounded-xl bg-purple-500 hover:bg-purple-600 transition w-full">
+                Start Word Search
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -146,9 +163,11 @@ export default function Game() {
             <p className="flex-grow">
               Drag and drop blocks to build correct geometric shapes.
             </p>
-            <button className="mt-6 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-600 transition w-full">
-              Play Shape Builder
-            </button>
+            <Link to={"/game/shapebuilder"}>
+              <button className="mt-6 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-600 transition w-full">
+                Start Shape Builder
+              </button>
+            </Link>
           </div>
         </motion.div>
 

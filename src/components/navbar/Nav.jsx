@@ -15,14 +15,16 @@ const Navbar = () => {
         dispatch(loginUser())
     }, [])
 
-     const handleLogout = () => {
-        dispatch({ type: 'login/logout' }); 
+    const handleLogout = () => {
+        dispatch({ type: 'login/logout' });
         navigate('/');
     };
 
     return (
         <nav className="fixed w-full top-0 z-50">
-            <Welcome />
+            <div className="w-full">
+                <Welcome />
+            </div>
             <div className="backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                     {/* Logo */}
@@ -60,58 +62,58 @@ const Navbar = () => {
 
                     {/* Auth Buttons (Desktop) */}
                     {
-                            user ? (
-                                <div className="hidden md:flex items-center space-x-4">
-                                    <span className="text-gray-200">Hello 👋, {user.name}</span>
-                                     <button
-                            onClick={handleLogout}
-                            className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition"
-                        >
-                            Logout
-                        </button>
-                                </div>
-                            ) : (
-                                <div className="hidden md:flex items-center space-x-4">
-                        <NavLink
-                            to="/login"
-                            className="px-4 py-2 rounded-lg bg-indigo-600/80 hover:bg-indigo-700 text-white text-sm font-medium shadow-md transition"
-                        >
-                            Login
-                        </NavLink>
-                        <NavLink
-                            to="/register"
-                            className="px-4 py-2 rounded-lg bg-pink-600/80 hover:bg-pink-700 text-white text-sm font-medium shadow-md transition"
-                        >
-                            Register
-                        </NavLink>
-                    </div>
-                            )
+                        user ? (
+                            <div className="hidden md:flex items-center space-x-4">
+                                <span className="text-gray-200">Hello 👋, {user.name}</span>
+                                <button
+                                    onClick={handleLogout}
+                                    className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition"
+                                >
+                                    Logout
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="hidden md:flex items-center space-x-4">
+                                <NavLink
+                                    to="/login"
+                                    className="px-4 py-2 rounded-lg bg-indigo-600/80 hover:bg-indigo-700 text-white text-sm font-medium shadow-md transition"
+                                >
+                                    Login
+                                </NavLink>
+                                <NavLink
+                                    to="/register"
+                                    className="px-4 py-2 rounded-lg bg-pink-600/80 hover:bg-pink-700 text-white text-sm font-medium shadow-md transition"
+                                >
+                                    Register
+                                </NavLink>
+                            </div>
+                        )
                     }
 
                     {/* Mobile Menu Button */}
                     <button
-  className="relative z-50 flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg md:hidden group"
-  onClick={() => setMenuOpen(!menuOpen)}
->
-  <span
-    className={`block h-0.5 w-6 rounded-sm bg-white transform transition duration-300 ease-in-out 
+                        className="relative z-50 flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg md:hidden group"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                        <span
+                            className={`block h-0.5 w-6 rounded-sm bg-white transform transition duration-300 ease-in-out 
       ${menuOpen ? "rotate-45 translate-y-1.5" : "-translate-y-1.5"}`}
-  />
-  <span
-    className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-in-out 
+                        />
+                        <span
+                            className={`block h-0.5 w-6 rounded-sm bg-white transition-all duration-300 ease-in-out 
       ${menuOpen ? "opacity-0" : "opacity-100"}`}
-  />
-  <span
-    className={`block h-0.5 w-6 rounded-sm bg-white transform transition duration-300 ease-in-out 
+                        />
+                        <span
+                            className={`block h-0.5 w-6 rounded-sm bg-white transform transition duration-300 ease-in-out 
       ${menuOpen ? "-rotate-45 -translate-y-1.5" : "translate-y-1.5"}`}
-  />
-</button>
+                        />
+                    </button>
                 </div>
 
                 {/* Mobile Dropdown */}
                 {menuOpen && (
                     <div className="md:hidden px-6 pb-4 backdrop-blur-lg bg-black/30 border-t border-white/20">
-                        
+
                         {
                             user ? (
                                 <div className="flex items-center justify-between py-3 border-b border-white/20">

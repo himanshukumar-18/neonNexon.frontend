@@ -1,26 +1,27 @@
-// InfiniteSlider.jsx
 import React, { useEffect, useRef } from "react";
 
 const Welcome = () => {
     const sliderRef = useRef(null);
     const positionRef = useRef(0);
-    const speed = 1; // Pixels per frame
+    const speed = 1.5; // Pixels per frame
 
-    const message = "🚀 Welcome to NeonNexus! Play games, take quizzes, and learn STEM in a fun way! 🌟 ";
+    const message =
+        "🚀 Welcome to NeonNexus! Play games, take quizzes, and learn STEM in a fun way! 🌟 ";
 
     useEffect(() => {
         const slider = sliderRef.current;
         if (!slider) return;
 
-        // Duplicate content for seamless scrolling
-        slider.innerHTML += slider.innerHTML;
+        // Store original content and duplicate properly
+        const originalContent = slider.innerHTML;
+        slider.innerHTML = originalContent + originalContent;
 
         let animationFrameId;
 
         const animate = () => {
             positionRef.current -= speed;
 
-            // Reset position when half of the scroll width is passed
+            // Reset position when full width of original message is passed
             if (positionRef.current <= -slider.scrollWidth / 2) {
                 positionRef.current = 0;
             }
@@ -45,15 +46,59 @@ const Welcome = () => {
             }}
         >
             <div
-            className="py-2"
+                className="py-2"
                 id="slider"
                 ref={sliderRef}
                 style={{
-                    display: "inline-block",
+                    display: "inline-flex",
                     whiteSpace: "nowrap",
                 }}
             >
                 <span
+                    style={{
+                        fontWeight: "bold",
+                        fontSize: ".9rem",
+                        color: "white",
+                        paddingRight: "50px",
+                    }}
+                >
+                    {message}
+                </span>
+
+                 <span
+                    style={{
+                        fontWeight: "bold",
+                        fontSize: ".9rem",
+                        color: "white",
+                        paddingRight: "50px",
+                    }}
+                >
+                    {message}
+                </span>
+
+                 <span
+                    style={{
+                        fontWeight: "bold",
+                        fontSize: ".9rem",
+                        color: "white",
+                        paddingRight: "50px",
+                    }}
+                >
+                    {message}
+                </span>
+
+                 <span
+                    style={{
+                        fontWeight: "bold",
+                        fontSize: ".9rem",
+                        color: "white",
+                        paddingRight: "50px",
+                    }}
+                >
+                    {message}
+                </span>
+
+                 <span
                     style={{
                         fontWeight: "bold",
                         fontSize: ".9rem",

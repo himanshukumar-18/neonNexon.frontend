@@ -3,7 +3,7 @@ import { FeaturesCard, Button } from "../index.js"
 
 const Home = () => {
     return (
-        <div className="bg-gradient-to-br from-gray-900 via-indigo-950 to-violet-900 text-gray-100 min-h-screen flex flex-col justify-center">
+        <div className="bg-gradient-to-br from-gray-900 via-indigo-950 to-violet-900 text-gray-100 min-h-screen flex flex-col justify-center pt-20 sm:pt-0">
             {/* Hero Section */}
             <section className="pt-28 pb-16 px-6 text-center max-w-5xl mx-auto">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-indigo-400 mb-6 drop-shadow-lg w-full">
